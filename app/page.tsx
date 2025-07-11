@@ -52,7 +52,7 @@ export default function Portfolio() {
       institution: "Sree Venkateswara College of Engineering",
       year: "2021 - 2025",
       grade: "73%",
-      status: "Pursuing",
+      status: "Completed",
       description:
         "Currently pursuing Computer Science Engineering with focus on programming, web development, and emerging technologies.",
     },
@@ -608,7 +608,7 @@ export default function Portfolio() {
                     className="w-full justify-start bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white"
                     asChild
                   >
-                    <a href="mailto:saireddy.kamujula.2004@gmail.com">
+                    <a href="mailto:saireddy.kamajula.2004@gmail.com">
                       <Mail className="mr-2 h-4 w-4" />
                       Send Email
                     </a>
