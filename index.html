@@ -3,214 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harshavardhan Chamala - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Achyuth Sai Kamujula - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <a href="#" class="logo">Harshavardhan Chamala</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="menu-toggle" id="mobile-menu">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Achyuth Sai</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-image">
-                    <i class="fas fa-user-circle"></i>
-                </div>
-                <h1>Harshavardhan Chamala</h1>
-                <p class="subtitle">Computer Science Engineering Student</p>
-                <p class="description">Passionate about technology and eager to explore new opportunities in software development. Currently pursuing B.Tech in Computer Science Engineering with a focus on building strong technical foundations.</p>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">Achyuth Sai Kamujula</span>
+                </h1>
+                <h2 class="hero-subtitle">Computer Science Engineering Student</h2>
+                <p class="hero-description">
+                    Passionate about technology and eager to learn new things. 
+                    Currently pursuing B.Tech in CSE with a focus on web development and cloud technologies.
+                </p>
                 <div class="hero-buttons">
-                    <a href="#contact" class="btn primary-btn"><i class="fas fa-envelope"></i> Get In Touch</a>
-                    <a href="#" class="btn secondary-btn"><i class="fas fa-download"></i> Download Resume</a>
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-secondary">View My Work</a>
                 </div>
             </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about-section section-padding">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Get to know more about my journey and aspirations</p>
-
-                <div class="about-grid">
-                    <div class="about-card">
-                        <h3>Career Objective</h3>
-                        <p>To succeed in an environment of growth and excellence and earn a job which provides me job satisfaction and self-development and help me achieve personal as well as organizational goals.</p>
+            <div class="hero-image">
+                <div class="profile-card">
+                    <div class="profile-img">
+                        <i class="fas fa-user-graduate"></i>
                     </div>
-                    <div class="about-card">
-                        <h3>Personal Details</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Career Objective</h3>
+                    <p>
+                        To succeed in an environment of growth and excellence and earn a job which provides me job 
+                        satisfaction and self-development and help me achieve personal as well as organizational goals.
+                    </p>
+                    
+                    <div class="strengths">
+                        <h4>My Strengths</h4>
                         <ul>
-                            <li><i class="fas fa-map-marker-alt icon-blue"></i> Chejarla, Nellore, Andhra Pradesh</li>
-                            <li><i class="fas fa-calendar-alt icon-blue"></i> Date of Birth: April 22, 2004</li>
-                            <li><i class="fas fa-language icon-blue"></i> Languages Known: Telugu, English</li>
+                            <li><i class="fas fa-check"></i> Willing to learn new things</li>
+                            <li><i class="fas fa-check"></i> Self-motivated & Self-disciplined</li>
+                            <li><i class="fas fa-check"></i> Friendly nature</li>
                         </ul>
                     </div>
-                    <div class="about-card">
-                        <h3>Strengths</h3>
-                        <ul>
-                            <li><i class="fas fa-award icon-green"></i> Willing to learn new things.</li>
-                            <li><i class="fas fa-award icon-green"></i> Self-motivated & Self-disciplined.</li>
-                            <li><i class="fas fa-award icon-green"></i> Friendly nature.</li>
-                        </ul>
-                    </div>
-                    <div class="about-card">
-                        <h3>Hobbies</h3>
-                        <ul>
-                            <li><i class="fas fa-heart icon-red"></i> Browsing internet to acquire new things.</li>
-                            <li><i class="fas fa-heart icon-red"></i> Playing games.</li>
-                            <li><i class="fas fa-heart icon-red"></i> Listening music.</li>
-                        </ul>
+
+                    <div class="hobbies">
+                        <h4>Hobbies & Interests</h4>
+                        <div class="hobby-tags">
+                            <span class="tag"><i class="fas fa-globe"></i> Browsing Internet</span>
+                            <span class="tag"><i class="fas fa-gamepad"></i> Gaming</span>
+                            <span class="tag"><i class="fas fa-music"></i> Listening Music</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="education-section section-padding bg-light">
-            <div class="container">
-                <h2 class="section-title">Education</h2>
-                <p class="section-subtitle">My academic journey and achievements</p>
-
-                <div class="education-timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <div class="timeline-content">
-                            <h3>B.Tech in Computer Science Engineering</h3>
-                            <p class="institution">Sree Venkateswara College of Engineering</p>
-                            <p class="details">2021-2025 | Aggregate: 73% <span class="badge pursuing">Pursuing</span></p>
+                <div class="about-info">
+                    <div class="info-card">
+                        <h4>Personal Information</h4>
+                        <div class="info-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>Date of Birth: April 22, 2004</span>
                         </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <div class="timeline-content">
-                            <h3>Intermediate (MPC)</h3>
-                            <p class="institution">Sri Chaitanya Junior College</p>
-                            <p class="details">2019-2021 | Aggregate: 87% <span class="badge completed">Completed</span></p>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Location: Chejarla, Nellore, Andhra Pradesh</span>
                         </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <div class="timeline-content">
-                            <h3>Secondary School Certificate</h3>
-                            <p class="institution">Z.P.P.High School</p>
-                            <p class="details">2018-2019 | 7.8 GPA <span class="badge completed">Completed</span></p>
+                        <div class="info-item">
+                            <i class="fas fa-language"></i>
+                            <span>Languages: Telugu, English</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>saireddy.kamajula.2004@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 8106944175</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="skills-section section-padding">
-            <div class="container">
-                <h2 class="section-title">Technical Skills</h2>
-                <p class="section-subtitle">Technologies and tools I work with</p>
-
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3><i class="fas fa-code icon-blue"></i> Programming Languages</h3>
-                        <div class="skill-badges">
-                            <span class="skill-badge">HTML</span>
-                            <span class="skill-badge">CSS</span>
-                            <span class="skill-badge">SQL</span>
-                            <span class="skill-badge">Python (Basics)</span>
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Bachelor of Technology (CSE)</h3>
+                        <h4>Sree Venkateswara College of Engineering</h4>
+                        <span class="timeline-date">2021 - 2025</span>
+                        <p>Aggregate: 73%</p>
+                        <div class="timeline-description">
+                            Currently pursuing Computer Science Engineering with focus on programming, 
+                            web development, and emerging technologies.
                         </div>
                     </div>
-                    <div class="skill-category">
-                        <h3><i class="fas fa-briefcase icon-green"></i> Office Tools</h3>
-                        <div class="skill-badges">
-                            <span class="skill-badge">MS Word</span>
-                            <span class="skill-badge">MS Excel</span>
-                            <span class="skill-badge">MS PowerPoint</span>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Intermediate (MPC)</h3>
+                        <h4>Sri Chaitanya Junior College</h4>
+                        <span class="timeline-date">2019 - 2021</span>
+                        <p>Aggregate: 87%</p>
+                        <div class="timeline-description">
+                            Completed intermediate education with Mathematics, Physics, and Chemistry.
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Secondary School Certificate</h3>
+                        <h4>Z.P.P. High School</h4>
+                        <span class="timeline-date">2018 - 2019</span>
+                        <p>GPA: 7.8</p>
+                        <div class="timeline-description">
+                            Completed secondary education with strong academic performance.
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Experience Section (Workshops) -->
-        <section id="experience" class="experience-section section-padding bg-light">
-            <div class="container">
-                <h2 class="section-title">Workshops & Experience</h2>
-                <p class="section-subtitle">Learning experiences and professional development</p>
-
-                <div class="experience-card">
-                    <div class="experience-icon"><i class="fas fa-award"></i></div>
-                    <div class="experience-content">
-                        <h3>DevOps with AWS Cloud</h3>
-                        <p class="organization">SVCN Nellore</p>
-                        <p class="description">Attended comprehensive workshop on DevOps practices and AWS Cloud services, gaining insights into modern deployment strategies and cloud infrastructure management.</p>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python (Basics)</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>SQL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Office Applications</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fas fa-file-word"></i>
+                            <span>MS Word</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-file-excel"></i>
+                            <span>MS Excel</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-file-powerpoint"></i>
+                            <span>PowerPoint</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Workshop & Certifications</h3>
+                    <div class="workshop-item">
+                        <i class="fab fa-aws"></i>
+                        <div>
+                            <h4>DevOps with AWS Cloud</h4>
+                            <p>Attended workshop at SVCN Nellore</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section section-padding">
-            <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Let's connect and discuss opportunities</p>
-
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h3>Contact Information</h3>
-                        <ul>
-                            <li><i class="fas fa-envelope icon-blue"></i> <a href="mailto:saireddy.kamajula.2004@gmail.com">saireddy.kamajula.2004@gmail.com</a></li>
-                            <li><i class="fas fa-phone icon-green"></i> <a href="tel:+918106944175">+91 8106944175</a></li>
-                            <li><i class="fas fa-map-marker-alt icon-red"></i> Chejarla, Nellore District, Andhra Pradesh</li>
-                        </ul>
-                        <div class="social-links">
-                            <h3>Connect with me</h3>
-                            <a href="#" class="social-btn"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="#" class="social-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                        </div>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-code"></i>
                     </div>
-                    <div class="contact-form-card">
-                        <h3>Send me a message</h3>
-                        <p>I'd love to hear from you</p>
-                        <form class="contact-form">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" placeholder="Your name" required>
+                    <h3>Portfolio Website</h3>
+                    <p>A responsive personal portfolio website built with HTML, CSS, and JavaScript showcasing my skills and experience.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="project-card coming-soon">
+                    <div class="project-icon">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <h3>More Projects Coming Soon</h3>
+                    <p>I'm currently working on exciting projects that will be showcased here. Stay tuned for updates!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always open to discussing new opportunities and interesting projects. Feel free to reach out!</p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:saireddy.kamajula.2004@gmail.com">saireddy.kamajula.2004@gmail.com</a>
                             </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <a href="tel:+918106944175">+91 8106944175</a>
                             </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <span>Chejarla, Nellore, Andhra Pradesh</span>
                             </div>
-                            <button type="submit" class="btn primary-btn full-width-btn">Send Message</button>
-                        </form>
+                        </div>
                     </div>
                 </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Harshavardhan Chamala. All rights reserved.</p>
+            <div class="footer-content">
+                <p>&copy; 2024 Achyuth Sai Kamujula. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
         </div>
     </footer>
 
