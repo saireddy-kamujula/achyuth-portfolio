@@ -18,13 +18,13 @@ import {
   Briefcase,
   MessageCircle,
   Building,
+  GraduationCap,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import Image from "next/image" // Next.js Image component
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion" // Import Accordion components
 
 export default function Portfolio() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -54,7 +54,7 @@ export default function Portfolio() {
       grade: "73%",
       status: "Completed",
       description:
-        "Currently pursuing Computer Science Engineering with focus on programming, web development, and emerging technologies.",
+        "Focused on core computer science concepts, programming, web development, and emerging technologies.",
     },
     {
       degree: "Intermediate (MPC)",
@@ -62,7 +62,7 @@ export default function Portfolio() {
       year: "2019 - 2021",
       grade: "89%",
       status: "Completed",
-      description: "Completed intermediate education with Mathematics, Physics, and Chemistry.",
+      description: "Completed intermediate education with a strong foundation in Mathematics, Physics, and Chemistry.",
     },
     {
       degree: "Secondary School Certificate",
@@ -70,7 +70,7 @@ export default function Portfolio() {
       year: "2018 - 2019",
       grade: "7.8 GPA",
       status: "Completed",
-      description: "Completed secondary education with strong academic performance.",
+      description: "Achieved strong academic performance during secondary education.",
     },
   ]
 
@@ -343,32 +343,37 @@ export default function Portfolio() {
             <p className="text-xl text-gray-700 mt-4">My academic journey</p>
           </div>
 
-          <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {education.map((edu, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200">
-                <AccordionTrigger className="flex justify-between items-center py-4 px-6 text-left hover:no-underline hover:bg-gray-100 transition-colors duration-200 rounded-t-lg">
-                  <div className="flex flex-col items-start">
-                    <h3 className="text-xl font-semibold text-gray-900">{edu.degree}</h3>
-                    <p className="text-gray-600">
-                      {edu.institution} - {edu.year}
-                    </p>
+              <Card
+                key={index}
+                className="h-full bg-gray-50 border-gray-200 text-gray-700 shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-teal-100 rounded-lg">
+                      <GraduationCap className="h-6 w-6 text-teal-600" />
+                    </div>
+                    <CardTitle className="text-lg text-gray-900">{edu.degree}</CardTitle>
                   </div>
-                  <Badge
-                    variant={edu.status === "Completed" ? "default" : "secondary"}
-                    className="bg-gray-200 text-gray-800 hover:bg-gray-300"
-                  >
-                    {edu.status}
-                  </Badge>
-                </AccordionTrigger>
-                <AccordionContent className="bg-gray-100 p-6 rounded-b-lg border-t border-gray-200">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="text-2xl font-bold text-teal-600">{edu.grade}</div>
+                  <CardDescription className="text-gray-600 mt-2">{edu.institution}</CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <div className="flex justify-between items-center mb-3">
+                    <p className="text-sm text-gray-500">{edu.year}</p>
+                    <Badge
+                      variant={edu.status === "Completed" ? "default" : "secondary"}
+                      className="bg-gray-200 text-gray-800 hover:bg-gray-300"
+                    >
+                      {edu.status}
+                    </Badge>
                   </div>
-                  <p className="text-gray-700 leading-relaxed">{edu.description}</p>
-                </AccordionContent>
-              </AccordionItem>
+                  <p className="text-xl font-bold text-teal-600 mb-2">{edu.grade}</p>
+                  <p className="text-gray-700 text-sm leading-relaxed">{edu.description}</p>
+                </CardContent>
+              </Card>
             ))}
-          </Accordion>
+          </div>
 
           {/* Workshop & Certifications Section */}
           <div className="mt-12">
