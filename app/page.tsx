@@ -25,9 +25,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import Image from "next/image" // Next.js Image component
+import { cn } from "@/lib/utils" // Import cn for conditional class names
 
 export default function Portfolio() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [highlightedSectionId, setHighlightedSectionId] = useState<string | null>(null) // New state for highlighting sections
 
   useEffect(() => {
     const handleScroll = () => {
@@ -159,6 +161,8 @@ export default function Portfolio() {
                   key={item}
                   href={`#${item.toLowerCase()}`}
                   className="text-gray-700 hover:text-teal-600 transition-colors duration-200 font-medium"
+                  onMouseEnter={() => setHighlightedSectionId(item.toLowerCase())} // Set highlighted section on hover
+                  onMouseLeave={() => setHighlightedSectionId(null)} // Clear highlighted section on mouse leave
                 >
                   {item}
                 </a>
@@ -333,7 +337,14 @@ export default function Portfolio() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-16 px-6 bg-white">
+      <section
+        id="education"
+        className={cn(
+          "py-16 px-6 bg-white",
+          highlightedSectionId === "education" &&
+            "ring-4 ring-teal-400 ring-offset-4 rounded-lg transition-all duration-300 ease-in-out",
+        )}
+      >
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4 relative inline-block">
@@ -401,7 +412,14 @@ export default function Portfolio() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-16 px-6 bg-gray-100">
+      <section
+        id="experience"
+        className={cn(
+          "py-16 px-6 bg-gray-100",
+          highlightedSectionId === "experience" &&
+            "ring-4 ring-teal-400 ring-offset-4 rounded-lg transition-all duration-300 ease-in-out",
+        )}
+      >
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4 relative inline-block">
@@ -445,7 +463,14 @@ export default function Portfolio() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-16 px-6 bg-white">
+      <section
+        id="skills"
+        className={cn(
+          "py-16 px-6 bg-white",
+          highlightedSectionId === "skills" &&
+            "ring-4 ring-teal-400 ring-offset-4 rounded-lg transition-all duration-300 ease-in-out",
+        )}
+      >
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4 relative inline-block">
@@ -481,7 +506,14 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-16 px-6 bg-gray-100">
+      <section
+        id="projects"
+        className={cn(
+          "py-16 px-6 bg-gray-100",
+          highlightedSectionId === "projects" &&
+            "ring-4 ring-teal-400 ring-offset-4 rounded-lg transition-all duration-300 ease-in-out",
+        )}
+      >
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4 relative inline-block">
@@ -595,7 +627,7 @@ export default function Portfolio() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Linkedin className="mr-2 h-4 w-4 text-teal-600" />
+                      <Linkedin className="mr-2 h-4 w-4" />
                       LinkedIn Profile
                     </a>
                   </Button>
