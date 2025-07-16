@@ -629,7 +629,7 @@ export default function Portfolio() {
       <footer className="bg-gray-200 text-gray-700 py-8 px-6">
         <div className="container mx-auto text-center">
           <p className="text-gray-700">© 2024 Achyuth Sai Kamujula. All rights reserved.</p>
-          <p className="text-gray-600 text-sm mt-2">Built with React, Next.js, and Tailwind CSS</p>
+          <p className="text-gray-600 text-sm mt-2">Built with JavaScript, React, HTML, and CSS</p>
         </div>
       </footer>
     </div>
