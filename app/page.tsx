@@ -358,7 +358,7 @@ export default function Portfolio() {
             {education.map((edu, index) => (
               <Card
                 key={index}
-                className="h-full bg-gray-50 border-gray-200 text-gray-700 shadow-md hover:shadow-lg transition-shadow duration-300"
+                className="h-full bg-gray-50 border-gray-200 text-gray-700 shadow-md hover:shadow-lg hover:scale-[1.02] hover:-translate-y-2 transition-all duration-300"
               >
                 <CardHeader className="pb-3">
                   <div className="flex items-center gap-3">
@@ -433,7 +433,7 @@ export default function Portfolio() {
             {experience.map((exp, index) => (
               <Card
                 key={index}
-                className="hover:shadow-lg transition-shadow duration-300 bg-white border-gray-200 text-gray-700 shadow-md"
+                className="hover:shadow-lg hover:scale-[1.02] hover:-translate-y-2 transition-all duration-300 bg-white border-gray-200 text-gray-700 shadow-md"
               >
                 <CardContent className="p-6">
                   <div className="flex flex-col md:flex-row md:items-center justify-between">
@@ -484,7 +484,7 @@ export default function Portfolio() {
             {skills.map((skill, index) => (
               <Card
                 key={skill.name}
-                className="hover:shadow-lg transition-shadow duration-300 bg-gray-50 border-gray-200 text-gray-700 shadow-md"
+                className="hover:shadow-lg hover:scale-[1.02] hover:-translate-y-2 transition-all duration-300 bg-gray-50 border-gray-200 text-gray-700 shadow-md"
               >
                 <CardContent className="p-6">
                   <div className="flex items-center gap-3 mb-4">
@@ -527,7 +527,7 @@ export default function Portfolio() {
             {projects.map((project, index) => (
               <Card
                 key={index}
-                className="h-full hover:shadow-lg transition-shadow duration-300 bg-white border-gray-200 text-gray-700 shadow-md"
+                className="h-full hover:shadow-lg hover:scale-[1.02] hover:-translate-y-2 transition-all duration-300 bg-white border-gray-200 text-gray-700 shadow-md"
               >
                 <CardHeader>
                   <CardTitle className="text-lg text-gray-900">{project.title}</CardTitle>
