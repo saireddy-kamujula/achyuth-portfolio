@@ -12,7 +12,6 @@ import {
   Code,
   Database,
   Cloud,
-  BookOpen,
   Award,
   User,
   Briefcase,
@@ -40,12 +39,10 @@ export default function Portfolio() {
   }, [])
 
   const skills = [
-    { name: "HTML", level: 85, icon: Code },
-    { name: "CSS", level: 80, icon: Code },
     { name: "Python", level: 60, icon: Code },
     { name: "SQL", level: 70, icon: Database },
-    { name: "MS Office", level: 90, icon: BookOpen },
     { name: "AWS Cloud", level: 50, icon: Cloud },
+    { name: "Full Stack", level: 75, icon: Code }, // Added Full Stack
   ]
 
   const education = [
