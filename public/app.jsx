@@ -211,14 +211,8 @@ function updateNavigation() {
 
 function redirectToDashboard() {
   if (currentUser) {
-    // In a real application, you would redirect to different dashboard pages
-    // based on the user's role
-    showSuccessMessage(`Redirecting to ${currentUser.role} dashboard...`)
-
-    // For demo purposes, we'll just show a message
-    setTimeout(() => {
-      alert(`Welcome to your ${currentUser.role} dashboard! This would normally redirect to a dashboard page.`)
-    }, 1000)
+    // Redirect to the dashboard page
+    window.location.href = "/dashboard.html"
   }
 }
 
