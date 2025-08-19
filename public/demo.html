@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K12 Learning Platform - Live Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .demo-section {
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .demo-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            font-weight: bold;
+        }
+        .demo-content {
+            padding: 20px;
+            background: white;
+        }
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        .api-response {
+            background: #f0f9ff;
+            border-left: 4px solid #0ea5e9;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .success-response {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+        }
+        .error-response {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <i class="fas fa-graduation-cap text-4xl text-blue-600 mr-4"></i>
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-900">K12 Learning Platform</h1>
+                        <p class="text-gray-600">Complete Educational Management System</p>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <p class="text-sm text-gray-500">Built with Express.js & MongoDB</p>
+                    <p class="text-sm text-gray-500">Full-Stack Educational Platform</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Platform Overview -->
+        <div class="demo-section">
+            <div class="demo-header">
+                <i class="fas fa-info-circle mr-2"></i>
+                Platform Overview & Architecture
+            </div>
+            <div class="demo-content">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">🏗️ System Architecture</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><strong>Backend:</strong> Node.js + Express.js</li>
+                            <li><strong>Database:</strong> MongoDB with Mongoose ODM</li>
+                            <li><strong>Authentication:</strong> JWT Tokens + bcrypt</li>
+                            <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+)</li>
+                            <li><strong>Styling:</strong> Tailwind CSS</li>
+                            <li><strong>Security:</strong> Helmet, Rate Limiting, Input Validation</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">👥 User Roles</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                                <i class="fas fa-user-graduate text-blue-600 mr-3"></i>
+                                <div>
+                                    <strong>Students:</strong> Access courses, submit assignments, view grades
+                                </div>
+                            </div>
+                            <div class="flex items-center p-3 bg-green-50 rounded-lg">
+                                <i class="fas fa-chalkboard-teacher text-green-600 mr-3"></i>
+                                <div>
+                                    <strong>Teachers:</strong> Create courses, manage lessons, grade assignments
+                                </div>
+                            </div>
+                            <div class="flex items-center p-3 bg-purple-50 rounded-lg">
+                                <i class="fas fa-user-shield text-purple-600 mr-3"></i>
+                                <div>
+                                    <strong>Admins:</strong> Manage users, oversee platform operations
+                                </div>
+                            </div>
+                            <div class="flex items-center p-3 bg-yellow-50 rounded-lg">
+                                <i class="fas fa-users text-yellow-600 mr-3"></i>
+                                <div>
+                                    <strong>Parents:</strong> Monitor child's progress and performance
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- API Endpoints Demo -->
+        <div class="demo-section">
+            <div class="demo-header">
+                <i class="fas fa-code mr-2"></i>
+                API Endpoints & Responses
+            </div>
+            <div class="demo-content">
+                <h3 class="text-xl font-semibold mb-4">🔐 Authentication Endpoints</h3>
+                
+                <!-- Registration -->
+                <div class="mb-6">
+                    <h4 class="font-semibold text-lg mb-2">POST /api/auth/register</h4>
+                    <p class="text-gray-600 mb-3">Register a new user (Student, Teacher, or Parent)</p>
+                    
+                    <div class="code-block">
+<strong>Request:</strong>
+POST /api/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "Emma",
+  "lastName": "Wilson",
+  "email": "emma.wilson@student.com",
+  "password": "student123",
+  "role": "student",
+  "grade": "5",
+  "dateOfBirth": "2014-03-15",
+  "parentEmail": "parent@example.com"
+}
+                    </div>
+                    
+                    <div class="api-response success-response">
+<strong>Response (201 Created):</strong>
+{
+  "message": "User registered successfully",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "user": {
+    "id": "65f1234567890abcdef12345",
+    "firstName": "Emma",
+    "lastName": "Wilson",
+    "email": "emma.wilson@student.com",
+    "role": "student",
+    "grade": "5"
+  }
+}
+                    </div>
+                </div>
+
+                <!-- Login -->
+                <div class="mb-6">
+                    <h4 class="font-semibold text-lg mb-2">POST /api/auth/login</h4>
+                    <p class="text-gray-600 mb-3">Authenticate user and receive JWT token</p>
+                    
+                    <div class="code-block">
+<strong>Request:</strong>
+POST /api/auth/login
+Content-Type: application/json
+
+{
+  "email": "emma.wilson@student.com",
+  "password": "student123"
+}
+                    </div>
+                    
+                    <div class="api-response success-response">
+<strong>Response (200 OK):</strong>
+{
+  "message": "Login successful",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "user": {
+    "id": "65f1234567890abcdef12345",
+    "firstName": "Emma",
+    "lastName": "Wilson",
+    "email": "emma.wilson@student.com",
+    "role": "student",
+    "grade": "5"
+  }
+}
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-semibold mb-4 mt-8">📚 Course Management</h3>
+                
+                <!-- Get Courses -->
+                <div class="mb-6">
+                    <h4 class="font-semibold text-lg mb-2">GET /api/courses</h4>
+                    <p class="text-gray-600 mb-3">Retrieve all available courses with filtering options</p>
+                    
+                    <div class="code-block">
+<strong>Request:</strong>
+GET /api/courses?grade=5&subject=Mathematics
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+                    </div>
+                    
+                    <div class="api-response success-response">
+<strong>Response (200 OK):</strong>
+[
+  {
+    "_id": "65f1234567890abcdef12346",
+    "title": "Elementary Mathematics",
+    "description": "Comprehensive mathematics course covering basic arithmetic...",
+    "subject": "Mathematics",
+    "grade": "5",
+    "teacher": {
+      "_id": "65f1234567890abcdef12347",
+      "firstName": "Sarah",
+      "lastName": "Johnson"
+    },
+    "duration": 12,
+    "difficulty": "Beginner",
+    "startDate": "2024-01-15T00:00:00.000Z",
+    "endDate": "2024-04-15T00:00:00.000Z",
+    "enrollmentCount": 25,
+    "isActive": true
+  }
+]
+                    </div>
+                </div>
+
+                <!-- Course Enrollment -->
+                <div class="mb-6">
+                    <h4 class="font-semibold text-lg mb-2">POST /api/courses/:id/enroll</h4>
+                    <p class="text-gray-600 mb-3">Enroll student in a course</p>
+                    
+                    <div class="code-block">
+<strong>Request:</strong>
+POST /api/courses/65f1234567890abcdef12346/enroll
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+                    </div>
+                    
+                    <div class="api-response success-response">
+<strong>Response (200 OK):</strong>
+{
+  "message": "Successfully enrolled in course"
+}
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-semibold mb-4 mt-8">📖 Lessons & Learning</h3>
+                
+                <!-- Get Lessons -->
+                <div class="mb-6">
+                    <h4 class="font-semibold text-lg mb-2">GET /api/lessons/course/:courseId</h4>
+                    <p class="text-gray-600 mb-3">Get all lessons for a specific course</p>
+                    
+                    <div class="api-response success-response">
+<strong>Response (200 OK):</strong>
+[
+  {
+    "_id": "65f1234567890abcdef12348",
+    "title": "Introduction to Fractions",
+    "description": "Learn the basics of fractions and how to identify numerators...",
+    "content": "In this lesson, we will explore what fractions are...",
+    "course": "65f1234567890abcdef12346",
+    "order": 1,
+    "duration": 45,
+    "quiz": {
+      "questions": [
+        {
+          "question": "What is the numerator in the fraction 3/4?",
+          "options": ["3", "4", "7", "1"],
+          "correctAnswer": 0,
+          "explanation": "The numerator is the top number in a fraction..."
+        }
+      ],
+      "passingScore": 70
+    },
+    "isPublished": true
+  }
+]
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-semibold mb-4 mt-8">📝 Assignment System</h3>
+                
+                <!-- Submit Assignment -->
+                <div class="mb-6">
+                    <h4 class="font-semibold text-lg mb-2">POST /api/assignments/:id/submit</h4>
+                    <p class="text-gray-600 mb-3">Submit assignment solution</p>
+                    
+                    <div class="code-block">
+<strong>Request:</strong>
+POST /api/assignments/65f1234567890abcdef12349/submit
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+Content-Type: application/json
+
+{
+  "content": "My solution to the math problems:\n1. 3/4 + 1/4 = 4/4 = 1\n2. 2/3 + 1/6 = 4/6 + 1/6 = 5/6",
+  "attachments": []
+}
+                    </div>
+                    
+                    <div class="api-response success-response">
+<strong>Response (200 OK):</strong>
+{
+  "message": "Assignment submitted successfully"
+}
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-semibold mb-4 mt-8">📊 Dashboard Data</h3>
+                
+                <!-- Student Dashboard -->
+                <div class="mb-6">
+                    <h4 class="font-semibold text-lg mb-2">GET /api/dashboard (Student)</h4>
+                    <p class="text-gray-600 mb-3">Get personalized dashboard data for students</p>
+                    
+                    <div class="api-response success-response">
+<strong>Response (200 OK):</strong>
+{
+  "enrolledCourses": [
+    {
+      "_id": "65f1234567890abcdef12346",
+      "title": "Elementary Mathematics",
+      "subject": "Mathematics",
+      "grade": "5",
+      "teacher": {
+        "firstName": "Sarah",
+        "lastName": "Johnson"
+      }
+    }
+  ],
+  "upcomingAssignments": [
+    {
+      "_id": "65f1234567890abcdef12349",
+      "title": "Fraction Practice Problems",
+      "dueDate": "2024-02-15T23:59:59.000Z",
+      "course": {
+        "title": "Elementary Mathematics"
+      }
+    }
+  ],
+  "recentGrades": [
+    {
+      "_id": "65f1234567890abcdef1234a",
+      "points": 85,
+      "maxPoints": 100,
+      "percentage": 85,
+      "letterGrade": "B",
+      "course": {
+        "title": "Elementary Mathematics"
+      }
+    }
+  ],
+  "stats": {
+    "totalCourses": 2,
+    "pendingAssignments": 3,
+    "averageGrade": "87.5"
+  }
+}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Database Schema -->
+        <div class="demo-section">
+            <div class="demo-header">
+                <i class="fas fa-database mr-2"></i>
+                Database Schema & Models
+            </div>
+            <div class="demo-content">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">👤 User Model</h3>
+                        <div class="code-block">
+{
+  "_id": ObjectId,
+  "firstName": String (required),
+  "lastName": String (required),
+  "email": String (required, unique),
+  "password": String (hashed),
+  "role": Enum ["student", "teacher", "admin", "parent"],
+  "grade": String (for students),
+  "dateOfBirth": Date (for students),
+  "parentEmail": String (for students),
+  "subjects": [String] (for teachers),
+  "enrolledCourses": [ObjectId],
+  "avatar": String,
+  "isActive": Boolean,
+  "lastLogin": Date,
+  "createdAt": Date,
+  "updatedAt": Date
+}
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">📚 Course Model</h3>
+                        <div class="code-block">
+{
+  "_id": ObjectId,
+  "title": String (required),
+  "description": String (required),
+  "subject": Enum [subjects],
+  "grade": Enum ["K", "1"..."12"],
+  "teacher": ObjectId (ref: User),
+  "lessons": [ObjectId] (ref: Lesson),
+  "assignments": [ObjectId] (ref: Assignment),
+  "enrolledStudents": [ObjectId] (ref: User),
+  "thumbnail": String,
+  "duration": Number (weeks),
+  "difficulty": Enum ["Beginner", "Intermediate", "Advanced"],
+  "startDate": Date,
+  "endDate": Date,
+  "isActive": Boolean,
+  "createdAt": Date,
+  "updatedAt": Date
+}
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">📖 Lesson Model</h3>
+                        <div class="code-block">
+{
+  "_id": ObjectId,
+  "title": String (required),
+  "description": String (required),
+  "content": String (required),
+  "course": ObjectId (ref: Course),
+  "order": Number (required),
+  "videoUrl": String,
+  "resources": [{
+    "title": String,
+    "url": String,
+    "type": Enum ["pdf", "video", "link", "image"]
+  }],
+  "quiz": {
+    "questions": [{
+      "question": String,
+      "options": [String],
+      "correctAnswer": Number,
+      "explanation": String
+    }],
+    "passingScore": Number
+  },
+  "duration": Number (minutes),
+  "isPublished": Boolean,
+  "createdAt": Date,
+  "updatedAt": Date
+}
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">📝 Assignment Model</h3>
+                        <div class="code-block">
+{
+  "_id": ObjectId,
+  "title": String (required),
+  "description": String (required),
+  "course": ObjectId (ref: Course),
+  "teacher": ObjectId (ref: User),
+  "dueDate": Date (required),
+  "maxPoints": Number,
+  "instructions": String (required),
+  "attachments": [{
+    "filename": String,
+    "url": String
+  }],
+  "submissions": [{
+    "student": ObjectId (ref: User),
+    "submittedAt": Date,
+    "content": String,
+    "attachments": [Object],
+    "grade": {
+      "points": Number,
+      "feedback": String,
+      "gradedAt": Date,
+      "gradedBy": ObjectId (ref: User)
+    }
+  }],
+  "isPublished": Boolean,
+  "createdAt": Date,
+  "updatedAt": Date
+}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Demo -->
+        <div class="demo-section">
+            <div class="demo-header">
+                <i class="fas fa-star mr-2"></i>
+                Platform Features & Capabilities
+            </div>
+            <div class="demo-content">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-shield-alt text-2xl text-blue-600 mr-3"></i>
+                            <h3 class="text-lg font-semibold">Security Features</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li>✅ JWT Authentication</li>
+                            <li>✅ Password Hashing (bcrypt)</li>
+                            <li>✅ Role-based Access Control</li>
+                            <li>✅ Input Validation</li>
+                            <li>✅ Rate Limiting</li>
+                            <li>✅ CORS Protection</li>
+                            <li>✅ Helmet Security Headers</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-graduation-cap text-2xl text-green-600 mr-3"></i>
+                            <h3 class="text-lg font-semibold">Learning Features</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li>✅ Interactive Lessons</li>
+                            <li>✅ Built-in Quizzes</li>
+                            <li>✅ Assignment System</li>
+                            <li>✅ Progress Tracking</li>
+                            <li>✅ Grade Management</li>
+                            <li>✅ Course Enrollment</li>
+                            <li>✅ Multi-media Support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-purple-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-cogs text-2xl text-purple-600 mr-3"></i>
+                            <h3 class="text-lg font-semibold">Technical Features</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li>✅ RESTful API Design</li>
+                            <li>✅ MongoDB Integration</li>
+                            <li>✅ Responsive Design</li>
+                            <li>✅ Error Handling</li>
+                            <li>✅ Data Validation</li>
+                            <li>✅ File Upload Support</li>
+                            <li>✅ Search & Filtering</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sample Data -->
+        <div class="demo-section">
+            <div class="demo-header">
+                <i class="fas fa-data mr-2"></i>
+                Sample Data & Test Accounts
+            </div>
+            <div class="demo-content">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">🔑 Test Accounts</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-red-50 border border-red-200 rounded-lg">
+                                <h4 class="font-semibold text-red-800">Admin Account</h4>
+                                <p class="text-sm text-red-700">Email: admin@k12learning.com</p>
+                                <p class="text-sm text-red-700">Password: admin123</p>
+                                <p class="text-xs text-red-600">Full platform access & user management</p>
+                            </div>
+                            
+                            <div class="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                                <h4 class="font-semibold text-blue-800">Teacher Account</h4>
+                                <p class="text-sm text-blue-700">Email: sarah.johnson@k12learning.com</p>
+                                <p class="text-sm text-blue-700">Password: teacher123</p>
+                                <p class="text-xs text-blue-600">Create courses, lessons & grade assignments</p>
+                            </div>
+                            
+                            <div class="p-4 bg-green-50 border border-green-200 rounded-lg">
+                                <h4 class="font-semibold text-green-800">Student Account</h4>
+                                <p class="text-sm text-green-700">Email: emma.wilson@student.com</p>
+                                <p class="text-sm text-green-700">Password: student123</p>
+                                <p class="text-xs text-green-600">Access courses, submit assignments & view grades</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">📊 Sample Courses</h3>
+                        <div class="space-y-3">
+                            <div class="p-3 bg-gray-50 border rounded-lg">
+                                <h4 class="font-medium">Elementary Mathematics (Grade 5)</h4>
+                                <p class="text-sm text-gray-600">Fractions, decimals, basic arithmetic</p>
+                                <p class="text-xs text-gray-500">Teacher: Sarah Johnson • 25 students enrolled</p>
+                            </div>
+                            
+                            <div class="p-3 bg-gray-50 border rounded-lg">
+                                <h4 class="font-medium">Introduction to Science (Grade 5)</h4>
+                                <p class="text-sm text-gray-600">Scientific method, basic experiments</p>
+                                <p class="text-xs text-gray-500">Teacher: Sarah Johnson • 20 students enrolled</p>
+                            </div>
+                            
+                            <div class="p-3 bg-gray-50 border rounded-lg">
+                                <h4 class="font-medium">Middle School English (Grade 8)</h4>
+                                <p class="text-sm text-gray-600">Reading comprehension, writing skills</p>
+                                <p class="text-xs text-gray-500">Teacher: Michael Davis • 30 students enrolled</p>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-xl font-semibold mb-4 mt-6">📝 Sample Lessons</h3>
+                        <div class="space-y-2">
+                            <div class="p-2 bg-blue-50 border-l-4 border-blue-400 text-sm">
+                                <strong>Lesson 1:</strong> Introduction to Fractions (45 min)
+                            </div>
+                            <div class="p-2 bg-blue-50 border-l-4 border-blue-400 text-sm">
+                                <strong>Lesson 2:</strong> Adding Fractions (50 min)
+                            </div>
+                            <div class="p-2 bg-green-50 border-l-4 border-green-400 text-sm">
+                                <strong>Science:</strong> The Scientific Method (40 min)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Usage Instructions -->
+        <div class="demo-section">
+            <div class="demo-header">
+                <i class="fas fa-play-circle mr-2"></i>
+                How to Run the Platform
+            </div>
+            <div class="demo-content">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">🚀 Setup Instructions</h3>
+                        <div class="code-block">
+<strong>1. Install Dependencies:</strong>
+npm install
+
+<strong>2. Set Environment Variables:</strong>
+Create .env file:
+MONGODB_URI=mongodb://localhost:27017/k12_learning
+JWT_SECRET=your-super-secret-jwt-key
+PORT=5000
+
+<strong>3. Create Directories:</strong>
+node scripts/createDirectories.js
+
+<strong>4. Seed Database:</strong>
+npm run seed
+
+<strong>5. Start Server:</strong>
+npm run dev
+
+<strong>6. Access Platform:</strong>
+http://localhost:5000
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">📱 Platform Usage</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                                <h4 class="font-semibold text-yellow-800">Step 1: Registration</h4>
+                                <p class="text-sm text-yellow-700">Create account as Student, Teacher, or Parent</p>
+                            </div>
+                            
+                            <div class="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                                <h4 class="font-semibold text-blue-800">Step 2: Login</h4>
+                                <p class="text-sm text-blue-700">Use credentials to access role-based dashboard</p>
+                            </div>
+                            
+                            <div class="p-4 bg-green-50 border border-green-200 rounded-lg">
+                                <h4 class="font-semibold text-green-800">Step 3: Explore</h4>
+                                <p class="text-sm text-green-700">Browse courses, lessons, assignments based on your role</p>
+                            </div>
+                            
+                            <div class="p-4 bg-purple-50 border border-purple-200 rounded-lg">
+                                <h4 class="font-semibold text-purple-800">Step 4: Interact</h4>
+                                <p class="text-sm text-purple-700">Enroll in courses, submit assignments, track progress</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Metrics -->
+        <div class="demo-section">
+            <div class="demo-header">
+                <i class="fas fa-chart-bar mr-2"></i>
+                Platform Statistics & Performance
+            </div>
+            <div class="demo-content">
+                <div class="grid md:grid-cols-4 gap-4 mb-6">
+                    <div class="text-center p-4 bg-blue-50 rounded-lg">
+                        <div class="text-3xl font-bold text-blue-600">15+</div>
+                        <div class="text-sm text-gray-600">API Endpoints</div>
+                    </div>
+                    <div class="text-center p-4 bg-green-50 rounded-lg">
+                        <div class="text-3xl font-bold text-green-600">5</div>
+                        <div class="text-sm text-gray-600">Database Models</div>
+                    </div>
+                    <div class="text-center p-4 bg-purple-50 rounded-lg">
+                        <div class="text-3xl font-bold text-purple-600">4</div>
+                        <div class="text-sm text-gray-600">User Roles</div>
+                    </div>
+                    <div class="text-center p-4 bg-yellow-50 rounded-lg">
+                        <div class="text-3xl font-bold text-yellow-600">100%</div>
+                        <div class="text-sm text-gray-600">Responsive</div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-4">🎯 Key Features Implemented</h3>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div>
+                            <h4 class="font-medium mb-2">Authentication & Security</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• JWT Token Authentication</li>
+                                <li>• Password Encryption</li>
+                                <li>• Role-based Access Control</li>
+                                <li>• Input Validation</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-2">Learning Management</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Course Creation & Management</li>
+                                <li>• Interactive Lessons</li>
+                                <li>• Quiz System</li>
+                                <li>• Assignment Submission</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-2">User Experience</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Responsive Design</li>
+                                <li>• Role-based Dashboards</li>
+                                <li>• Real-time Updates</li>
+                                <li>• Progress Tracking</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center mb-4">
+                <i class="fas fa-graduation-cap text-3xl text-blue-400 mr-3"></i>
+                <h3 class="text-2xl font-bold">K12 Learning Platform</h3>
+            </div>
+            <p class="text-gray-400 mb-4">Complete Educational Management System</p>
+            <p class="text-sm text-gray-500">Built with Express.js, MongoDB, and modern web technologies</p>
+            <p class="text-sm text-gray-500 mt-2">© 2024 K12 Learning Platform. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
