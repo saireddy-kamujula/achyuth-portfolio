@@ -1,20 +1,42 @@
 {
-  "name": "achyuth-portfolio",
-  "version": "0.1.0",
+  "name": "k12-learning-platform",
+  "version": "1.0.0",
   "private": true,
+  "description": "A comprehensive K12 learning platform built with Express.js and MongoDB",
+  "keywords": [
+    "education",
+    "k12",
+    "learning",
+    "platform",
+    "express",
+    "mongodb"
+  ],
+  "license": "MIT",
+  "author": "Achyuth Sai Kamujula",
+  "main": "server.js",
   "scripts": {
-    "build": "next build",
-    "dev": "next dev",
+    "dev": "nodemon server.js",
     "lint": "next lint",
-    "start": "next start"
+    "seed": "node scripts/seedData.js",
+    "start": "node server.js"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-progress": "latest",
+    "bcryptjs": "latest",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cors": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "express-rate-limit": "latest",
+    "express-validator": "latest",
     "framer-motion": "^10.16.4",
+    "helmet": "latest",
+    "jsonwebtoken": "latest",
     "lucide-react": "^0.454.0",
+    "mongoose": "latest",
+    "multer": "^1.4.5-lts.1",
     "next": "14.2.16",
     "react": "^18",
     "react-dom": "^18",
@@ -28,8 +50,9 @@
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.0",
+    "nodemon": "^3.0.1",
     "postcss": "^8.5",
-    "tailwindcss": "^3.3.0",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5"
   }
 }
